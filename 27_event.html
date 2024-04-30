@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set interval</title>
+</head>
+
+<body>
+    <h1>chai aur javacrpt</h1>
+    <button id="start">start</button>
+    <button id="stop">stop</button>
+</body>
+<script>
+    // call back function -> hander function
+    // setInterval(() => {
+    //     console.log("hello interval");
+    // }, 2000);
+
+    //with argument (3 rd is optional)
+    function print(name) {
+        console.log(name + ":" + Date.now());
+    }
+    // const ref = setInterval(print, 2000, "santu");
+
+    //stop the setinterval
+    // clearInterval(ref);
+    let ref;
+    document.getElementById('start').addEventListener('click', () => {
+        console.log("start click");
+        ref = setInterval(print, 2000, "santu");
+    })
+    document.getElementById('stop').addEventListener('click', () => {
+        clearInterval(ref);
+    })
+
+</script>
+
+</html>

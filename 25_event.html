@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            height: 100px;
+            width: 100px;
+            margin: 10px;
+            background-color: pink;
+            border: 3px solid black;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <ul id="ul">
+            <li class="box" onclick="alert('box is clicked')">box1</li>
+            <li class="box" id="box2">box2</li>
+            <li class="box">box3</li>
+            <li class="box">box4</li>
+            <li class="box">box5</li>
+            <a href="https://www.w3schools.com/" id="w3">Visit W3Schools.com!</a>
+        </ul>
+    </div>
+</body>
+<script>
+    // document.getElementById('box2').onclick = function () {
+    //     alert("box2 is clicked");
+    // }
+
+    //another way us to use addEventLister
+
+    // document.getElementById('box2').addEventListener('click', () => {
+    //     alert('using addEventListerns');
+    // })
+
+    // event propagation  (bubbling up and capturing )
+
+    // bubbling up propagation in js
+
+    // false refer that bubbling up event propagartion is going to happen
+    // document.getElementById('ul').addEventListener('click', () => {
+    //     console.log('clicked inside ul');
+    // }, false)
+    // document.getElementById('box2').addEventListener('click', (e) => {
+    //     console.log('clicked inside box2');
+    // e.stopPropagation()  // stop the propagation of series of evevnt
+    // }, false)
+    // clicked inside box2
+    // clicked inside ul
+
+    // true rafer to captering method
+    // document.getElementById('ul').addEventListener('click', () => {
+    //     console.log('clicked inside ul');
+    // }, true)
+    // document.getElementById('box2').addEventListener('click', () => {
+    //     console.log('clicked inside box2');
+    // }, true)
+    // clicked inside ul
+    // clicked inside box2
+
+    //    e.preventDefault()
+    document.getElementById('w3').addEventListener('click', (e) => {
+        console.log("google clicked");
+        e.preventDefault();
+    }, false)
+    // dont go in w3 page
+
+
+    //assignment when click on the one box the box should remoce
+    //for this use box2
+
+    // const box2 = document.getElementById('box2')
+    // box2.addEventListener('click', (e) => {
+    //     console.log("box2 is removed");
+    //     box2.remove();
+    // })
+
+    // for all boxex
+    document.getElementById('ul').addEventListener('click', (e) => {
+        // console.log(e.target.parentNode);   //gives ul
+        console.log(e.target.tagName);
+        let box = e.target   //gives li 
+        if (e.target.tagName === 'LI')
+            box.remove();
+    })
+
+
+    // javascript -> by default -> syn code line by line code -> blocking code
+    
+    //async -> non blocking code
+    
+
+    
+
+
+</script>
+</html>

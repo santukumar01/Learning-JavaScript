@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project BMI - CALCULATER</title>
+    <style>
+        input {
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h3 id="heading">BMI calculator</h3>
+
+    <!-- The for attribute of <label> must be equal to the id attribute of the related element to bind them together. A -->
+
+    <form>
+        <label for="height">Height in cm :</label>
+        <input type="text" id="height" , name="height1">
+        <br>
+        <label for="weight">Weight in m :</label>
+        <input type="text" id="weight" name="weight">
+        <br>
+        <span id="result"></span>
+        <button type="submit">BMI</button>
+    </form>
+
+</body>
+<script>
+    const form = document.querySelector('form');
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        let height = Number(document.querySelector('#height').value);
+        let weight = Number(document.querySelector('#weight').value);
+        const results = document.querySelector('#result');
+
+        if (height < 0 || height === 0 || isNaN(height)) {
+            results.innerHTML = "<h3>height is Invaild</h3>"
+        }
+        else if (weight < 0 || weight === 0 || isNaN(weight)) {
+            results.innerHTML = "<h3>weight is Invaild</h3>"
+        }
+        else {
+            let bmi = weight / (height * height);
+
+            results.innerHTML = `<span>${bmi}</span>`
+        }
+
+
+
+
+    })
+
+</script>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>After clicking the start buttonn backgroung coloue must change conytinuesle before stop button</h1>
+    <button id="start">start</button>
+    <button id="stop">stop</button>
+</body>
+<script>
+    let intervalId = null;
+    function randomColGen() {
+        const hex = '0123456789ABCDEF';
+        let col = '#';
+        for (let i = 0; i < 6; i++) {
+            col += hex[Math.floor(Math.random() * 16)];
+        }
+        return col;
+    }
+    function printCol() {
+        let col = randomColGen();
+        document.body.style.backgroundColor = col;
+    }
+
+    document.querySelector('#start').addEventListener('click', () => {
+        if (intervalId === null)
+            intervalId = setInterval(printCol, 1000);
+
+    })
+    document.querySelector('#stop').addEventListener('click', () => {
+        console.log("stop");
+        clearInterval(intervalId);
+        intervalId = null;
+    })
+
+
+</script>
+
+</html>

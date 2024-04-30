@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container {
+            background-color: rgb(91, 81, 81);
+            color: white;
+            height: 700px;
+        }
+
+        #input {
+            display: inline;
+            height: 30px;
+            width: 60%;
+            text-align: center;
+            font-weight: 700;
+            border: 2px solid black;
+            border-radius: 10px;
+
+        }
+
+        #inputField {
+            display: block;
+            margin: auto;
+            width: 70%;
+        }
+
+        button {
+            height: 30px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <h2 style="text-align: center; border: 3px solid black;">Write your Todo:</h2>
+        <!-- <label for="input"> Write Todo:</label> -->
+        <div id="inputField">
+            <input type="text" id="input" placeholder="Enter your todo">
+            <button onclick='handleClick()'>Add Todo</button>
+        </div>
+
+    </div>
+
+</body>
+<script>
+    function handleClick() {
+        console.log("santu");
+    }
+</script>
+
+</html>

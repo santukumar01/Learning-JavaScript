@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .div-class {
+            color: blue;
+        }
+    </style>
+</head>
+
+<body style="background-color: black; color: white;">
+
+</body>
+<script>
+    //how to create an element
+    const div = document.createElement('div');
+    console.log(div);  // empty div
+    // div.id = 2
+    // div.className = 'div-class'
+    div.setAttribute('id', 1);
+    div.setAttribute('class', 'div-class newclass');
+    div.setAttribute('title', 'set title');
+
+    /* //writing in element */
+    div.innerText = "santu is a good boy";
+    /* const addText = document.createTextNode('chai aur code');
+    div.appendChild(addText); */
+
+    /* appending div to body as a child  */
+    document.body.appendChild(div);
+
+</script>
+
+</html>

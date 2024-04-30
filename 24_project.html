@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project1 : Theme changer</title>
+    <style>
+        .container {
+            display: block;
+
+        }
+
+        .button {
+            color: white;
+            margin: 10px;
+
+        }
+
+        #black {
+            background-color: black;
+        }
+
+        #blue {
+            background-color: blue;
+        }
+
+        #pink {
+            background-color: pink;
+        }
+
+        #yellow {
+            background-color: yellow;
+        }
+
+        .heading {
+            display: block;
+            text-align: center;
+            margin: auto;
+            background-color: red;
+
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="heading">this is theem changer</h1>
+    <div class="container">
+
+        <button class="button" id='black'>Black</button>
+        <button class="button" id='blue'>Blue</button>
+        <button class="button" id='pink'>Pink</button>
+        <button class="button" id='yellow'>Yellow</button>
+    </div>
+</body>
+<script>
+    //selecting all button and body
+    //selecting body
+    const body = document.querySelector('body');
+    const arr = document.querySelectorAll('.button')
+
+    arr.forEach((btn) => {
+        // console.log(btn);
+        btn.addEventListener('click', (e) => {
+            console.log(e);
+            console.log(e.target);  // from where the eveent is comming
+            body.style.backgroundColor = e.target.id;
+        })
+    })
+
+</script>
+
+</html>

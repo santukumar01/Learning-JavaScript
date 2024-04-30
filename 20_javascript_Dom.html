@@ -1,0 +1,224 @@
+<!-- Dom-document object model -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Learning</title>
+    <style>
+        .bg-black {
+            background-color: rgb(59, 56, 51);
+            color: white;
+        }
+    </style>
+</head>
+
+<body class="bg-black">
+    <div>
+        <h1 id="title" class="heading">Dom learning</h1>
+        <h1 class="heading">Dom learning</h1>
+        <h1 class="heading">Dom learning</h1>
+        <p id="text">Eligendi repellendus Pariatur
+            <span style="display: none;">distinctio quos nam</span>
+        </p>
+
+        <input type="password" name="" id="">
+        <!-- change the colour of first item -->
+        <!-- document.querySelector('ul').style.backgroundColor = 'red' changes the whole bg color of ul -->
+        <ul>
+            <li class="list">item1</li>
+            <li class="list">item2</li>
+            <li class="list">item3</li>
+            <li class="list">item4</li>
+        </ul>
+    </div>
+</body>
+
+</html>
+
+<!-- console.log(window.document) -> gives all-->
+
+<!-- console.log(document) -> head and body -->
+
+<!-- console.dir(document) -> gives all inforemation-->
+
+<!-- document.getElementById("title")
+<h1 id=​"title" class=​"heading">​Dom learning​</h1>​
+document.getElementById("title").id
+'title'
+document.getElementById("title").class    //class shoud noyt use
+undefined
+document.getElementById("title").className  //className
+'heading' 
+document.getElementById("title").getAttribute('class') 
+'heading'
+document.getElementById("title").getAttribute('id')
+'title'
+document.getElementById("title").setAttribute('class' , 'test');   //overwrite  the class attribute to test 
+undefined
+document.getElementById("title").setAttribute('class' , 'test heading');  //better way
+undefined
+const title = document.getElementById("title")
+undefined
+consol
+VM2125:1 Uncaught ReferenceError: consol is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM2125:1
+console.log(typeod title)
+VM2232:1 Uncaught SyntaxError: missing ) after argument list
+console.log(typeof title);
+VM2256:1 object
+undefined
+const title= document.getElementbyId('title')
+undefined
+title
+<h1 id=​"title" class=​"test heading">​Dom learning​</h1>​
+title.style.backgroundColor = 'green'
+'green'
+title.style.backgroundColor = 'yellow'
+'yellow'
+title.style.padding = '30px'
+'30px'
+title.style.borderRadius = '30px'
+'30px
+
+//innnerText , innerHTML ,  textContent  -> 
+
+title   // updates title
+<h1 id=​"title" class=​"test heading" style=​"background-color:​ yellow;​ padding:​ 30px;​ border-radius:​ 30px;​">​Dom learning​</h1>​
+
+
+//innnerText -> text which us visible to us
+title.innerText
+'Dom learning'
+
+title.innerHTML ->
+'Dom learning'
+
+title.textContent
+'Dom learning'
+
+
+-->
+
+<!-- innnerText , innerHTML , innerContent -->
+<!-- <div>
+    <h1 id="title" class="heading">Dom learning</h1>
+    <p id="text">Eligendi repellendus Pariatur
+        <span style="display: none;">distinctio quos nam</span>
+    </p>
+    
+cnst text = document.getElementById('text')
+undefined
+text
+<p id=​"text">​…​</p>​
+text.innerText  // only visible content
+'Eligendi repellendus Pariatur'
+
+text.textContent  // all content
+'Eligendi repellendus Pariatur\n            distinctio quos nam\n  
+
+text.innerHTML  // all content with tags and HTML
+'Eligendi repellendus Pariatur\n            <span style="display: none;">distinctio quos nam</span>\n        
+
+
+document.getElementByClaseName (' ')  -> html collection
+
+
+//you can write all way in which  you access css selector
+document.querySelector('h1')  //only first value
+<h1 id=​"title" class=​"heading">​Dom learning​</h1>​
+document.querySelectorAll('h1')  // all value in  arrr
+NodeList(3) [h1#title.heading, h1.heading, h1.heading]0: h1#title.heading1: h1.heading2: h1.headinglength: 3[[Prototype]]: NodeList
+
+/selecting by id ans class
+document.querySelector('#id') 
+document.querySelector('.className') 
+
+//for selcting the password
+document.querySelector('input[type = "password"]')
+<input type="password" name="" id="">
+
+
+</div> -->
+
+
+<!-- 
+    for selecting in one element / first element ul
+
+const ulItem = document.querySelector('ul');
+undefined
+
+
+ulItem
+<ul style=​"background-color:​ red;​">​…​</ul>​<li style=​"background-color:​ yellow;​ color:​ white;​">​…​</li>​<li>​…​</li>​::marker​"item2"</li>​<li>​…​</li>​</ul>​
+
+ulItem.querySelectorAll('li').style.color='black'  // gives error
+
+console.log(typeof ulItem)
+object
+undefined
+
+ulItem.querySelector('li').style.color='black'
+'black'
+
+const first = ulItem.querySelector("li");
+undefined
+
+first
+<li>item1</li>
+
+first.style.color = 'black' // colour changes
+'black'
+
+first.style.color = 'white'  // colur changes
+'white'
+
+first.innerText = "Two"  // test change
+'Two'
+ 
+first
+ <li>two</li>
+
+ for selecting all list 
+ const myarr = document.querySelectorAll('li')
+ //NodeList - > useful  -> included forEach loop
+ NodeList(3) [li, li, li]
+ myarr is Nodelist holding some of the property of arr but myarr is not an arr
+
+ marrr[0].style.color = 'yellow' //changif first colour 
+ //changing all colour 
+ marrr.forEach((i) => {   
+    i.style.color = 'yellow'} )
+ -->
+
+<!-- 
+    selestor by className  -> HTML collection  
+    
+    how will you convert the HTML collection to arr
+    const newArr = Array.from(collection)  // converting to arr
+
+const classlist = document.getElementsByClassName('list')
+undefined
+
+classlist
+HTMLCollection(4) [li.list, li.list, li.list, li.list]
+
+
+
+const newArr = Array.from(classlist);
+undefined
+
+//Node list and HTML collcetion can be acces like below
+classlist[0].style.color= 'black'
+
+newArr  // converted arr
+(4) [li.list, li.list, li.list, li.list]
+
+// changin all coloue
+newArr.forEach((item) =>{
+    item.style.color = 'yellow';
+})
+
+  -->

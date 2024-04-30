@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="background-color: black; color: white;">
+    <ul class="language">
+        <li>JavaScript</li>
+    </ul>
+</body>
+<script>
+    // creating a lisst element 
+    // const li = document.createElement('li');
+    // add property and attribut to them
+    // li.innerText = "c++";
+    // li.style.color = "red";
+
+    // selsct ul
+    const ul = document.querySelector('ul');
+    //append li to ul
+    // ul.appendChild(li);
+
+    //creating a function
+
+    let arr = ['java', "pyhton", "ruby", "computer"]
+
+    // function addLang(LangName) {
+    //     const list = document.createElement('li');
+    //     list.style.color = 'red';
+    //     // list.innerText = LangName;
+    //     list.innerHTML = `<h3>${LangName}</h3>`  // this will print all LangName in h3 heading style
+    //     ul.appendChild(list);
+    // }
+
+    // arr.forEach(addLang); // refrance of function
+
+    //another more more optimise way of writing
+    function optaddLang(langName) {
+        const list = document.createElement('li');
+        list.appendChild(document.createTextNode(langName));
+        ul.appendChild(list);
+    }
+
+    arr.forEach(optaddLang);
+
+
+    //edit
+    //changing first  li colore
+    // const ulList = document.querySelector('ul');
+    // const listItem = ulList.querySelector('li');
+    // listItem.style.color = "red";
+
+    //edit 
+    document.querySelector("li:nth-child(2)").style.color = 'yellow'
+
+    //another method -> creating a terxt node
+
+    const list2 = document.createElement('li');
+    list2.appendChild(document.createTextNode('Mojo'));
+
+    //using replace with
+    const sec = document.querySelector('li:nth-child(2)')
+    sec.replaceWith(list2);
+
+    //using outerHTML
+    const firstChild = document.querySelector('li:nth-child(1)');
+    console.log(firstChild);
+
+    firstChild.outerHTML = '<li>TYpescrpt</li>'
+
+    //remove  -> remove last child
+    const lastChild = document.querySelector('li:last-child');
+    lastChild.remove();
+
+
+
+</script>
+
+</html>

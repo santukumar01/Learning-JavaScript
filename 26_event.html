@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="btn">Document</title>
+</head>
+
+<body>
+    <h1 id="header">This is JavaScript</h1>
+    <button id="stop">Button</button>
+
+</body>
+<script>
+
+    //setTimeout
+    //works only one time
+    //direacctly call the setTimeout function
+    // setTimeout(() => {
+    //     console.log("hello")
+    // }, 2000)
+
+    //using function refernace instead of callback
+
+    // function sayHello() {
+    //     console.log("hello");
+    // }
+
+    // setTimeout(sayHello, 2000);
+    function change() {
+        document.querySelector('h1').innerHTML = '<h1>This is async code</h1>'
+    }
+    const ref = setTimeout(change, 5000);  // changing the h1 tag after 2 sec
+
+    // how to stop setTimeOut
+    document.querySelector('#stop').addEventListener('click', () => {
+        clearTimeout(ref);
+        console.log("stoped");
+    })
+
+</script>
+
+</html>
